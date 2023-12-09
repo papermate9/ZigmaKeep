@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css"/>
+    <title>Zigma Keep</title>
+</head>
+<body>
+    <div class="main-bg">
+        <div class="top-container">
+            <h1>Zigma Keep</h1>
+            <input type="text" name="search" id="search"/>
+            <button type="button" id="new-folder" onclick="newFolder()">New Folder</button>
+            <button type="button" id="new-note" onclick="newNote()">New Note</button>            
+            <p onclick="logout()" class="logout">Log Out</p>
+        </div>
+        <div class="folder-container" id="folder-container"></div>
+        <div id="bottom-container" class="bottom-container"></div>
+        <form class="folder-form" id="folder-form" method="post" onsubmit="addFolder(event)" style="display: none;">
+            <input type="text" id="folder-name"/>
+            <button type="submit" id="add-folder">Add Folder</button>
+        </form>
+        <div class="new-note-form" id="new-note-form" style="display: none;">
+            <div class="close-form" onclick="closeForm()">X</div>
+            <form id="note-form" method="post" onsubmit="submitForm(event)">
+                <input type="text" name="noteTitle" id="noteTitle" placeholder="Note Title" class="form-field"/>
+                <label class="folder-name-label">Folder Name</label>
+                <input type="text" name="folderName" id="folderName" placeholder="Folder Name" class="form-field" value="General"/>
+                <textarea type="text" name="noteDesc" id="noteDesc" placeholder="Description" rows="5" cols="30" class="form-field"></textarea>
+                <button type="submit" id="submit-btn">Add Note</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+    <script>
+        // Checks if the user is authenticated before allowing access to the homepage
+        if (localStorage.getItem('authenticated') !== 'true') {
+            alert('Access denied. Please log in.');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

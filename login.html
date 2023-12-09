@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-bg">
+        <div class="login-div">
+            <form method="post" onsubmit="login(event)">
+                <label>Username</label>
+                <input type="text" name="userName" id="userName" placeholder="User Name"/>
+                <label>Password</label>
+                <input type="password" name="userPass" id="userPass" placeholder="Password"/>
+                <button type="submit">Log In</button>
+            </form>
+            <p>New User? <a href="./signup.html">SignUp</a></p>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+    <script>
+        function login(event) {
+            event.preventDefault();
+
+            if (userName.value !== "" || userPass.value !== "" ) {
+                const registeredPass = localStorage.getItem(userName.value)
+                if (registeredPass === userPass.value) {
+                    localStorage.setItem('authenticated', 'true');
+                    localStorage.setItem('user', JSON.stringify(userName.value));
+                    window.location.href = "./index.html";
+                } else {
+                    alert("Incorrect Username or Password");
+                }
+            } else {
+                alert('Username or Password should not be empty');
+            }
+        }
+    </script>
+</body>
+</html>

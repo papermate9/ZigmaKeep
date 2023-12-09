@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.top-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.logout {
+    cursor: pointer;
+}
+
+#search {
+    height: 25px;
+    width: 350px;
+}
+
+#new-note, #new-folder { 
+    height: 25px;
+    cursor: pointer;
+}
+
+.note {
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.bottom-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-note-form {
+    border: 1px solid black;
+    background-color: brown;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-field {
+    min-height: 25px;
+    width: 300px;
+    margin-bottom: 20px;
+    border: 1px solid red;
+}
+
+.login-bg {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.login-div {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.login-div form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.login-div input {
+    margin-bottom: 20px;
+    height: 25px;
+    width: 200px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.folder-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.folder {
+    padding: 10px;
+    border-bottom: 1px solid darkgray;
+    box-shadow: 2px 2px 2px darkgray;
+    cursor: pointer;
+}
+
+.folder-form {
+    position: absolute;
+    top:13%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.folder-img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.folder-name-label {
+    align-self: flex-start;
+    margin-left: 45px;
+    color: white;
+}
+
+.close-form {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: 380px;
+    cursor: pointer;
+}
+
+.note-top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
