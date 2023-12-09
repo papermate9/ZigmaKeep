@@ -4,6 +4,8 @@ let newNoteForm = document.getElementById("new-note-form");
 let folderContainer = document.getElementById("folder-container");
 let newFolderForm = document.getElementById("folder-form");
 //let changeBtn = document.getElementById("change-btn");
+let searchEl = document.getElementById('search');
+
 
 function getCurrentUser() {
     return JSON.parse(localStorage.getItem("user")) || null;
@@ -266,3 +268,12 @@ function renderUserNotes() {
 }
 folderRendering();
 renderUserNotes();
+
+searchEl.addEventListener('change', (event)=> {
+    if (event.target.value !== "") {
+        bottomContainer.textContent = ""
+        notesObj.filter(eachObj => eachObj.title.includes(event.target.value)).forEach(eachObj => {
+            addNote(eachObj);
+        });
+    }
+})
