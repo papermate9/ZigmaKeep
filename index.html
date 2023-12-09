@@ -8,10 +8,18 @@
     <title>Zigma Keep</title>
 </head>
 <body>
+    <script>
+        // Checks if the user is authenticated before allowing access to the homepage
+        if (localStorage.getItem('authenticated') !== 'true') {
+            alert('Access denied. Please log in.');
+            window.location.href = 'login.html';
+        }
+    </script>
+    
     <div class="main-bg">
         <div class="top-container">
             <h1>Zigma Keep</h1>
-            <input type="text" name="search" id="search"/>
+            <input type="text" name="search" id="search" placeholder="search Note Title"/>
             <button type="button" id="new-folder" onclick="newFolder()">New Folder</button>
             <button type="button" id="new-note" onclick="newNote()">New Note</button>            
             <p onclick="logout()" class="logout">Log Out</p>
@@ -35,12 +43,6 @@
     </div>
 
     <script src="./index.js"></script>
-    <script>
-        // Checks if the user is authenticated before allowing access to the homepage
-        if (localStorage.getItem('authenticated') !== 'true') {
-            alert('Access denied. Please log in.');
-            window.location.href = 'login.html';
-        }
-    </script>
+    
 </body>
 </html>
